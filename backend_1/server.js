@@ -61,6 +61,7 @@ io.on('connection',(socket)=>{
                             p.turn = true;
                     }
                     rooms.players.splice(rooms.players.indexOf(player),1);
+                    update_current_room(rooms.id,rooms.players);
                     io.sockets.in(rooms.id).emit("get-players",rooms.players);
                     io.sockets.in(rooms.id).emit("update-players",rooms.players);
                 }
