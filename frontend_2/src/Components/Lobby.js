@@ -217,8 +217,8 @@ function Lobby({socket}){
     }*/
     async function createURL(){
  
-        await navigator.clipboard.writeText(`localhost:3000/${roomId}`);
-        setURL(`localhost:3000/${roomId}`);
+        await navigator.clipboard.writeText(`${process.env.REACT_APP_FRONT_URL}/${roomId}`);
+        setURL(`${process.env.REACT_APP_FRONT_URL}/${roomId}`);
         setInvite(true);
         setTimeout(()=>{setInvite(false)},5000);
        
