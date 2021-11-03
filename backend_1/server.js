@@ -5,9 +5,6 @@ const http = require("http");
 const app = express();
 const server = http.createServer(app);
 const socket = require("socket.io");
-const port = process.env.PORT || 3001;
-
-
 
 let rooms_array = [];
 
@@ -207,4 +204,4 @@ function createRoom(user){
     return current_room;
 }
 
-server.listen(port);
+server.listen(process.env.PORT);
