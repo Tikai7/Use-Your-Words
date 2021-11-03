@@ -1,5 +1,4 @@
 require('dotenv').config();
-const { on } = require("events");
 const express = require("express");
 const http = require("http");
 const app = express();
