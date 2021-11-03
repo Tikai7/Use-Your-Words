@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { on } = require("events");
 const express = require("express");
 const http = require("http");
@@ -5,6 +6,8 @@ const app = express();
 const server = http.createServer(app);
 const socket = require("socket.io");
 const port = process.env.PORT || 3001;
+
+
 
 let rooms_array = [];
 
@@ -19,7 +22,7 @@ const io = socket(server,
 );
 
 io.on('connection',(socket)=>{
-    //console.log("User connected at room : "+socket.id);
+    console.log("User connected at room : "+socket.id);
 
     socket.on("user-data",(socketId,user)=>{
         

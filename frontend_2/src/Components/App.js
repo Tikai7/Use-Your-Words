@@ -12,7 +12,7 @@ import theme from "./Theme";
 
 function App() {
 
-    const URL = "http://localhost:3001";
+    const URL = process.env.REACT_APP_BACK_URL;
     const [socket,setSocket] = useState();
     
     useEffect(()=>{ 
