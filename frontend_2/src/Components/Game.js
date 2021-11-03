@@ -3,6 +3,7 @@ import {TextField } from "@mui/material";
 import { Button } from "@mui/material";
 import "../Styles/Game.css";
 import {motion} from "framer-motion";
+import { useState } from "react";
 //import { useEffect, useState } from "react";
 
 const RedVariants = {
@@ -33,7 +34,10 @@ const BlueVariants = {
    
 }
 
-function Game({GameVariant,socket,current_player,player_connected,currentSocketId,red,setRed,classes,roomId}) {      
+function Game({GameVariant,socket,current_player,player_connected,currentSocketId,red,setRed,classes,roomId}) {
+
+       setTimeout(handleClickFinish,60000);
+       const [finish,setFinish] = useState(false);
        if(socket && socket.id){
         return (
             <motion.div 
@@ -95,8 +99,14 @@ function Game({GameVariant,socket,current_player,player_connected,currentSocketI
                     </motion.div>
                  
                 </div>
-                {current_player.socketId !== socket.id ? (
-                <Button  className = {classes.launch} onClick={handleClickFinish}  >Terminer</Button>):null}
+                <div className="finish-button">
+                {
+                    current_player.socketId !== socket.id ? (
+                    <Button className = {classes.launch} onClick={handleClickFinish} >Terminer</Button>
+                    ):null
+                    }
+                    {finish ? <img src= {require('../Images/Checked.png').default} className = "check" alt="finish-click"/> : null}
+                </div>
             </motion.div>
         )
        }
@@ -109,10 +119,14 @@ function Game({GameVariant,socket,current_player,player_connected,currentSocketI
     }*/
     function handleClickFinish(){
         let p = player_connected.find((p)=>p.socketId === socket.id);
-        p.red_card = red;
-        p.isClicked_red = true;
-        //console.log(player_connected);
-        socket.emit("finish-click-game",roomId,player_connected);
+        if(p){
+            p.red_card = red;
+            p.isClicked_red = true;
+            setFinish(true)
+            //console.log(player_connected);
+            socket.emit("finish-click-game",roomId,player_connected);
+        }
+       
     }
 }
 export default Game;

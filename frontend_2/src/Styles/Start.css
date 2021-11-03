@@ -30,7 +30,16 @@ h1{
     font-weight : bold;
     font-size : 45px;
 }
-
+.check{
+    width: 20%;
+    height: 20%;
+}
+.finish-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
 @media (max-width: 800px) {
     .Formulaire{
         border-radius: 0;

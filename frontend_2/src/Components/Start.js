@@ -51,6 +51,7 @@ function Start({socket}){
     const [roomId,setRoomId] = useState(0);
     const [index,setIndex] = useState(1);
     const [switchAnim,setSwitch] = useState(false);
+    const [finish,setFinish] = useState(false);
 
     const startVariants = {
         init : {
@@ -78,6 +79,7 @@ function Start({socket}){
         }
     }
     useEffect(()=>{
+        
         if(socket) {
             socket.on("get-players-start",(player_co)=>{
                 if(player_co.length<2)
@@ -125,6 +127,7 @@ function Start({socket}){
 
 
     if(mode === 1){
+        setTimeout(handleClickFinish,10000)
         return(
             <motion.div 
             variants={startVariants}
@@ -166,7 +169,12 @@ function Start({socket}){
                            
                     </form>
                 </motion.div>
-                <Button  className = {classes.launch} onClick={handleClickFinish}>Terminer</Button>
+                <div className = "finish-button">
+                    <Button  className = {classes.launch} onClick={handleClickFinish}>Terminer</Button>
+                    {
+                        finish ? <img src= {require('../Images/Checked.png').default} className = "check" alt="finish-click"/> : null
+                    }
+                </div>
             </motion.div>
         )
     }
@@ -220,9 +228,12 @@ function Start({socket}){
     }
     function handleClickFinish(){
         let p = player_connected.find((p)=>p.socketId === socket.id);
-        p.blue_card = blue;
-        p.isClicked = true;
-        socket.emit("finish-click",roomId,player_connected);
+        if(p){   
+            setFinish(true);
+            p.blue_card = blue;
+            p.isClicked = true;
+            socket.emit("finish-click",roomId,player_connected);
+        }
     }
     function reset(player_co){
         let cp = player_co.find((p)=>p.turn===true);
