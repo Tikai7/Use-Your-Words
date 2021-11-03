@@ -36,8 +36,8 @@ const BlueVariants = {
 
 function Game({GameVariant,socket,current_player,player_connected,currentSocketId,red,setRed,classes,roomId}) {
 
-       setTimeout(handleClickFinish,60000);
        const [finish,setFinish] = useState(false);
+       setTimeout(handleClickFinish,60000);
        if(socket && socket.id){
         return (
             <motion.div 

@@ -127,7 +127,7 @@ function Start({socket}){
 
 
     if(mode === 1){
-        setTimeout(handleClickFinish,10000)
+        setTimeout(handleClickFinish,60000);
         return(
             <motion.div 
             variants={startVariants}
