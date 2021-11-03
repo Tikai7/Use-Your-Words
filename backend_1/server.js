@@ -10,9 +10,8 @@ let rooms_array = [];
 const io = socket(server,
     {
         cors:{
-            origin : [
-                process.env.FRONT_URL,
-            ],
+            origin: process.env.FRONT_URL,
+            credentials: true
         }
     }
 );
