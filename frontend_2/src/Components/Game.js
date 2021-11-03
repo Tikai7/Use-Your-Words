@@ -34,8 +34,8 @@ const BlueVariants = {
 }
 
 function Game({GameVariant,socket,current_player,player_connected,currentSocketId,red,setRed,classes,roomId}) {      
+       if(socket && socket.id){
         return (
-            
             <motion.div 
             variants = {GameVariant}
             initial = "init"
@@ -99,6 +99,10 @@ function Game({GameVariant,socket,current_player,player_connected,currentSocketI
                 <Button  className = {classes.launch} onClick={handleClickFinish}  >Terminer</Button>):null}
             </motion.div>
         )
+       }
+       else
+        return null;
+        
     
     /*function clickAuto(){
         setTimeout(handleClickFinish,60000);
