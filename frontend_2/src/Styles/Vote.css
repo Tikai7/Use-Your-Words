@@ -1,0 +1,52 @@
+
+.red_cards{
+    overflow-y : scroll;
+    margin-top: 2%;
+    border-radius: 30px;
+    width: 100%;
+    height: 600px;
+    background : linear-gradient(45deg, #ff6f3eb3 40%, #fe6b8bb7 90%);
+    box-shadow: 3px 5px 5px 2px rgba(255, 105, 135, .7);
+    flex-direction: column;
+}
+.red_cards_main{
+    margin-top: -3%;
+    overflow-y : scroll;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.red_cards,.red_cards_title,.red_cards_main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.myDiv{
+    width: 100%;
+    height: 100%;
+    overflow-wrap: break-word;
+}
+.b_c{
+    margin-top: -1%;
+    border-radius: 30px;
+    padding: 20px;
+    background: linear-gradient(45deg, #4689f6 50%, #3cbbd8 100%);
+    font-size: 40px;
+    color: white;
+}
+
+@media (max-width:  800px) {
+    .red_cards{
+        border-radius: 0;
+        overflow: hidden;
+        width: 100%;
+    }
+    .b_c{
+        width: 85%;
+    }
+    h1{
+        width: 80%;
+    }
+}
+
+

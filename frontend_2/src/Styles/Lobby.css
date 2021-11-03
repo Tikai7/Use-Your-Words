@@ -1,0 +1,185 @@
+
+.numberOf{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5%;
+    color: white;
+    font-size: 20px;
+}
+.link{
+    margin-top: 15%;
+    color: white;
+    padding: 5px;
+    width: 70%;
+    text-align: center;
+    background-color: #e4b73c;
+    border-radius: 30px;
+    font-size: 30px;
+}
+.lobby_room{
+    justify-content: space-between;
+}
+.player_name{
+    margin-left: 15%;
+    letter-spacing: 2px;
+    color: white;
+    font-size: 35px;
+    text-align: center;
+}
+.my_buttons{
+    justify-content: center;
+    align-items: baseline;
+}
+.player_avatar{
+    width: 100px;
+    height: 100px;
+}
+.my_buttons,.lobby_room,.avatar_name_block{
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+}
+
+.courrone{
+    margin-left: 5%;
+    margin-bottom: 2%;
+    width: 10%;
+    height: 10%;
+}
+.player_block,.player_block_vide{
+    box-shadow: 3px 5px 5px 2px #3fdcff99;
+    background: linear-gradient(45deg, #4689f6 50%, #3cbbd8 100%);
+    margin: 10px;
+    padding: 10px;
+    width: 80%;
+    height: 100px;
+    border-radius: 60px 20px 20px 60px;
+}
+.player_block_vide{
+    background : linear-gradient(45deg, rgb(109, 108, 108) 50%, #afafaf 90%);
+    box-shadow: 3px 5px 5px 2px rgba(0, 0, 0, .5);
+}
+.t_link{
+    overflow:auto;
+}
+.game_mode,.player_room{
+    margin-top: 15%;
+    border-radius: 20px;
+    background : linear-gradient(45deg, #ff6f3eb3 40%, #fe6b8bb7 90%);
+    box-shadow: 3px 5px 5px 2px rgba(255, 105, 135, .7);
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 100%;
+}
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #e4b73c;
+}
+.player_room::-webkit-scrollbar{
+    margin-top: -5%;
+}
+.player_room{
+    padding-top: 20px;
+    width: 40%;
+    height: 580px;
+    overflow-y: scroll;
+}
+.url_invite{
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 3px 5px 5px 2px #3fdcff99;
+    background: linear-gradient(45deg, #4689f6 50%, #3cbbd8 100%);
+    width: 50%;
+    height: 150px;
+    color: white;
+    padding: 30px;
+    border-radius: 50px;
+}
+.game_mode{
+    width: 55%;
+    height: 600px;
+}
+.my_real_button{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 800px) {
+   
+    h1{
+        text-align: center;
+    }
+    .lobby_room{
+        width: 100%;
+    }
+    .lobby_room,.player_room{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:center;
+    }
+    .player_room{
+        border-radius: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        flex-direction: row;
+        justify-content:flex-start;
+    }
+    .courrone{
+        display:  none;
+    }
+    .player_block,.player_block_vide{
+        box-shadow: 3px 5px 5px 2px #3fdcff99;
+        background: linear-gradient(45deg, #4689f6 50%, #3cbbd8 100%);
+        width: 90px;
+        height: 100px;
+        border-radius: 30px 30px 30px 30px;
+        padding-right : 7%;
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .player_block_vide{
+        background : linear-gradient(45deg, rgb(109, 108, 108) 50%, #afafaf 90%);
+        box-shadow: 3px 5px 5px 2px rgba(0, 0, 0, .5);
+    }
+    .player_avatar{
+        width: 100px;
+        height: 100px;
+    }
+    .player_name{
+        margin-top: 10%;
+        letter-spacing: 2px;
+        color: white;
+        font-size: 20px;
+        text-align: center;
+    }
+    .game_mode{
+        width: 100%;
+        border-radius: 0px;
+        background : linear-gradient(45deg, #ff6f3eb3 40%, #fe6b8bb7 90%);
+        box-shadow: 3px 5px 5px 2px rgba(255, 105, 135, .7);
+        display: flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+ 
+}

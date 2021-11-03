@@ -1,0 +1,25 @@
+
+body{
+    background-image: url("../Images/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 60%;
+    height: 100%;
+    margin: auto;
+    font-family: BurbankBigCondensed,'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: BurbankBigCondensed;
+    src: url("../Polices/BurbankBigCondensed-Bold.otf");
+}
+
+@media (max-width: 800px)  {
+    body{
+       width: 100%;
+       background-repeat: repeat;
+       background-size: cover;
+    }
+}
+
